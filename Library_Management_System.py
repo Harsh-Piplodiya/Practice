@@ -225,7 +225,7 @@ class main:
     #------------------Function to Add Data in Database-----------------------------
 
     def add_data(self):
-        conn = c.connect(host="localhost", user="root", passwd="Hp@29?mA*10x!", database="database1")
+        conn = c.connect(host="localhost", user="root", passwd="*******", database="database1")
         my_cursor = conn.cursor()    
         my_cursor.execute("insert into library values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
             (self.member.get(), self.idn.get(), self.f_name.get(), self.l_name.get(), self.address.get(), self.post_c.get(),
@@ -242,7 +242,7 @@ class main:
     #------------------Function to Update the Info in the Database--------------------------------------
      
     def update_data(self):
-        conn = c.connect(host="localhost", user="root", passwd="Hp@29?mA*10x!", database="database1")
+        conn = c.connect(host="localhost", user="root", passwd="*******", database="database1")
         my_cursor = conn.cursor() 
         libUpdate = ("update library set Member=%s,First_Name=%s,Last_Name=%s,Address=%s,Post_Code=%s,Mobile_No.=%s,Book_ID=%s,Book_Title=%s,Author_Name=%s,Date_Borrowed=%s,Date_Due=%s,Late_Fine=%s,Days_on_Book=%s,Date_Overdue=%s,Cost_of_Book=%s where ID=%s")    
         val = (self.member.get(), self.f_name.get(), self.l_name.get(), self.address.get(), self.post_c.get(), self.mobilen.get(), self.bookid.get(), self.bookname.get(), self.authorname.get(), self.dateb.get(), self.dated.get(), self.latefine.get(), self.daysdue.get(), self.dateover.get(), self.bookcost.get(), self.idn.get())
@@ -261,7 +261,7 @@ class main:
         if self.idn.get() == "":
             messagebox.showerror("ERROR", "Member Not Selected.")
         else:
-            conn = c.connect(host="localhost", user="root", passwd="Hp@29?mA*10x!", database="database1")
+            conn = c.connect(host="localhost", user="root", passwd="*******", database="database1")
             my_cursor = conn.cursor()
             dlt = ("delete from library where ID=%s")
             val = (self.idn.get(),)
@@ -277,7 +277,7 @@ class main:
     #------------------Function to Fetch Data from the Database for Details's frame---------------------
 
     def fetch_data(self):
-            conn = c.connect(host="localhost", user="root", passwd="Hp@29?mA*10x!", database="database1")
+            conn = c.connect(host="localhost", user="root", passwd="*******", database="database1")
             my_cursor = conn.cursor()
             my_cursor.execute("select * from library")
             rows = my_cursor.fetchall()
