@@ -244,7 +244,7 @@ class main:
     def update_data(self):
         conn = c.connect(host="localhost", user="root", passwd="*******", database="database1")
         my_cursor = conn.cursor() 
-        libUpdate = ("update library set Member=%s,First_Name=%s,Last_Name=%s,Address=%s,Post_Code=%s,Mobile_No.=%s,Book_ID=%s,Book_Title=%s,Author_Name=%s,Date_Borrowed=%s,Date_Due=%s,Late_Fine=%s,Days_on_Book=%s,Date_Overdue=%s,Cost_of_Book=%s where ID=%s")    
+        libUpdate = ("update library set Member=%s,First_Name=%s,Last_Name=%s,Address=%s,Post_Code=%s,Mobile_No=%s,Book_ID=%s,Book_Title=%s,Author_Name=%s,Date_Borrowed=%s,Date_Due=%s,Late_Fine=%s,Days_on_Book=%s,Date_Overdue=%s,Cost_of_Book=%s where ID=%s")    
         val = (self.member.get(), self.f_name.get(), self.l_name.get(), self.address.get(), self.post_c.get(), self.mobilen.get(), self.bookid.get(), self.bookname.get(), self.authorname.get(), self.dateb.get(), self.dated.get(), self.latefine.get(), self.daysdue.get(), self.dateover.get(), self.bookcost.get(), self.idn.get())
         my_cursor.execute(libUpdate , val)
 
